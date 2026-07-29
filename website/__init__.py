@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 def create_app():
     app = Flask(__name__)
@@ -6,28 +6,29 @@ def create_app():
 
 
     # home
-    @app.route("/")
-    @app.route("/home")
+    @app.route('/')
+    @app.route('/home')
     def home():
-        return "home"
+        return render_template('home.html')
 
 
     # length
-    @app.route("/length")
+    @app.route('/length')
     def length():
-        return "length"
+        #return "length"
+        return render_template('length.html')
 
 
     # weight
-    @app.route("/weight")
+    @app.route('/weight')
     def weight():
-        return "weight"
+        return render_template('weight.html')
 
 
     # temperature
-    @app.route("/temperature")
+    @app.route('/temperature')
     def temperature():
-        return "temperature"
+        return render_template('temperature.html')
 
     
     return app
