@@ -1,30 +1,6 @@
-from flask import Flask
+from website import create_app
 
-app = Flask(__name__)
+app = create_app()
 
-# home
-@app.route("/")
-def home():
-    return "home"
-
-
-# length
-@app.route("/length")
-def length():
-    return "length"
-
-
-# weight
-@app.route("/weight")
-def weight():
-    return "weight"
-
-
-# temperature
-@app.route("/temperature")
-def temperature():
-    return "temperature"
-
-
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
