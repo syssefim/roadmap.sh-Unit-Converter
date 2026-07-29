@@ -4,16 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Length</title>
-    
-    <!-- Link to external CSS stylesheet -->
-    <link rel="stylesheet" href="length.css">
 </head>
 <body>
+    <style>
+        .hidden { display: none; }
+    </style>
 
-    <!-- Your visible website content goes here -->
-    <p>length</p>
+    <!-- Converting View -->
+    <div id="converting-view">
+        <label for="length">Enter the length to convert: </label>
+        <input type="text" id="length" name="length" placeholder="length">
+        
+
+        <label for="from">Unit to convert from: </label>
+        <input type="text" id="from" name="from" placeholder="mm cm m km in ft yd mi">
+
+
+        <label for="to">Unit to convert to: </label>
+        <input type="text" id="to" name="to" placeholder="mm cm m km in ft yd mi">
+
+
+        <button id="convert">Convert</button>
+    </div>
+
+    <!-- Converted View -->
+     <div id="converted-view" class="hidden">
+        <h1>Units converted yayyy</h1>
+        <button id="reset">Reset</button>
+     </div>
+
 
     <!-- Javascript -->
-    <script></script>
+    <script>
+        const length = document.getElementById("length");
+        const convertFromUnit = document.getElementById("from");
+        const convertToUnit = document.getElementById("to");
+        const convertButton = document.getElementById("convert");
+        const resetButton = document.getElementById("reset");
+
+        convertButton.addEventListener("click", function() {
+            document.getElementById('converting-view').classList.add('hidden');
+            
+            document.getElementById('converted-view').classList.remove('hidden');
+        });
+
+        resetButton.addEventListener("click", function() {
+            document.getElementById('converting-view').classList.remove('hidden');
+            
+            document.getElementById('converted-view').classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
