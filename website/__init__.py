@@ -5,14 +5,8 @@ def create_app():
     app.config['SECRET_KEY'] = 'secretkeyuwu'
 
 
-    # home
-    @app.route('/')
-    @app.route('/home')
-    def home():
-        return render_template('home.html')
-
-
     # length
+    @app.route('/')
     @app.route('/length')
     def length():
         #return "length"
