@@ -1,28 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'secretkeyuwu'
 
 
-    # length
-    @app.route('/')
-    @app.route('/length')
-    def length():
-        #return "length"
-        return render_template('length.html')
+    # Register Blueprints
+    from .views import views
 
-
-    # weight
-    @app.route('/weight')
-    def weight():
-        return render_template('weight.html')
-
-
-    # temperature
-    @app.route('/temperature')
-    def temperature():
-        return render_template('temperature.html')
+    app.register_blueprint(views, url_prefix='/')
 
     
     return app
