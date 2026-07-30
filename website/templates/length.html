@@ -34,44 +34,12 @@
     <!-- Converted View -->
      <div id="converted-view" class="hidden">
         <p>Result of your calculation</p>
+        <p id="result"></p>
         <button id="reset">Reset</button>
      </div>
 
      
     <!-- Javascript -->
-    <script>
-        // Get elements
-        const navWeight = document.getElementById("navWeight");
-        const navTemperature = document.getElementById("navTemperature");                
-        const length = document.getElementById("length");
-        const convertFromUnit = document.getElementById("from");
-        const convertToUnit = document.getElementById("to");
-        const convertButton = document.getElementById("convert");
-        const resetButton = document.getElementById("reset");
-
-        // Add event listeners
-
-        // Navigation buttons
-        navWeight.addEventListener("click", function() {
-            window.location.href = "/weight";
-        });
-
-        navTemperature.addEventListener("click", function() {
-            window.location.href = "/temperature";
-        });
-
-        // Convert and Reset buttons
-        convertButton.addEventListener("click", function() {
-            document.getElementById('converting-view').classList.add('hidden');
-            
-            document.getElementById('converted-view').classList.remove('hidden');
-        });
-
-        resetButton.addEventListener("click", function() {
-            document.getElementById('converting-view').classList.remove('hidden');
-            
-            document.getElementById('converted-view').classList.add('hidden');
-        });
-    </script>
+    <script src="static/length.js"></script>
 </body>
 </html>
