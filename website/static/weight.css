@@ -1,0 +1,139 @@
+/* Import Inter from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap');
+
+/* Unit Converter — sketch-style layout */
+
+:root {
+  --border-width: 4px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #F8F8F8;
+}
+
+body {
+  margin: 40px auto;
+  max-width: 460px;
+  padding: 28px 32px 36px;
+  border: var(--border-width) solid #1a1a1a;
+  border-radius: 14px;
+  background: #ffffff;
+  
+  /* Changed from Comic Sans to Inter */
+  font-family: 'Inter', sans-serif; 
+  
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+body::before {
+  content: "Unit Converter";
+  display: block;
+  margin-bottom: 22px;
+  font-size: clamp(2rem, 5vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Navigation */
+#navigation {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+#navigation button {
+  background: transparent;
+  border: none;
+  padding: 0 0 6px;
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+#navigation button:hover:not(:disabled) {
+  color: #2563eb;
+}
+
+#navigation button[disabled] {
+  color: #2563eb;
+  border-bottom: 5px solid #2563eb;
+  cursor: default;
+  opacity: 1;
+}
+
+/* Converting view */
+#converting-view label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+#converting-view input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 12px 14px;
+  border: var(--border-width) solid #1a1a1a;
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+#converting-view input[type="text"]::placeholder {
+  color: #888;
+}
+
+#converting-view input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+#convert,
+#reset {
+  margin-top: 4px;
+  padding: 12px 28px;
+  border: var(--border-width) solid #1a1a1a;
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+#convert:hover,
+#reset:hover {
+  background: #f7f7f7;
+}
+
+/* Converted view */
+#converted-view::before {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+#converted-view h1 {
+  margin: 0 0 28px;
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+}
