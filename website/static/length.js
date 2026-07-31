@@ -106,26 +106,46 @@ navTemperature.addEventListener("click", function() {
 });
 
 
-// Convert and Reset buttons
+// Handle browser back/forward navigation
+window.addEventListener("popstate", function(event) {
+    // Get the state data we saved during pushState/replaceState
+    let state = event.state;
+
+    // If there is no state (fallback) or the state is 'converting'
+    if (!state || state.view === 'converting') {
+        // Show the converting view
+        document.getElementById('converting-view').classList.remove('hidden');
+        document.getElementById('converted-view').classList.add('hidden');
+    } 
+    // If the state is 'converted'
+    else if (state.view === 'converted') {
+        // Show the converted view
+        document.getElementById('converting-view').classList.add('hidden');
+        document.getElementById('converted-view').classList.remove('hidden');
+    }
+});
+
+// Convert button click event
 convertButton.addEventListener("click", function() {
     // Switch views
     document.getElementById('converting-view').classList.add('hidden');
     document.getElementById('converted-view').classList.remove('hidden');
 
-
-    console.log("Available keys:", Object.keys(conversion));
-
     // Conversion calculation
     let result = Number(length.value) * conversion[convertFromUnit.value.toLowerCase() + '-' + convertToUnit.value.toLowerCase()];
-    resultContainer.innerHTML += length.value + ' ' + convertFromUnit.value + ' = ' + result + ' ' + convertToUnit.value;
+    resultContainer.innerHTML = length.value + ' ' + convertFromUnit.value + ' = ' + result + ' ' + convertToUnit.value;
+
+    history.pushState({ 
+        view: 'converted', 
+        savedResults: resultContainer.innerHTML 
+    }, "", "#converted");
 });
 
+// Reset button click event
 resetButton.addEventListener("click", function() {
     // Switch views
     document.getElementById('converting-view').classList.remove('hidden');
     document.getElementById('converted-view').classList.add('hidden');
-
-    console.log('Resetting.....')
 
     // Reset input values
     length.value = length.defaultValue;
@@ -133,4 +153,5 @@ resetButton.addEventListener("click", function() {
     convertToUnit.value = convertToUnit.defaultValue;
     resultContainer.innerHTML = '';
 
+    history.pushState({ view: 'converting' }, "", "#converting");
 });
