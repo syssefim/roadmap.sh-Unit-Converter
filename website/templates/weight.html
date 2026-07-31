@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weight</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='weight.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='weight.png') }}"></head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='weight.png') }}">
 </head>
 <body>
-    <style>
-        .hidden { display: none; }
-    </style>
-
     <!-- Nav -->
     <div id="navigation">
         <button id="navLength">Length</button>
@@ -37,46 +33,14 @@
     </div>
 
     <!-- Converted View -->
-     <div id="converted-view" class="hidden">
-        <h1>Units converted yayyy</h1>
+    <div id="converted-view" class="hidden">
+        <p>Result of your calculation</p>
+        <p id="result"></p>
         <button id="reset">Reset</button>
-     </div>
+    </div>
 
      
     <!-- Javascript -->
-    <script>
-        // Get elements
-        const navLength = document.getElementById("navLength");
-        const navTemperature = document.getElementById("navTemperature");                
-        const weight = document.getElementById("weight");
-        const convertFromUnit = document.getElementById("from");
-        const convertToUnit = document.getElementById("to");
-        const convertButton = document.getElementById("convert");
-        const resetButton = document.getElementById("reset");
-
-        // Add event listeners
-
-        // Navigation buttons
-        navLength.addEventListener("click", function() {
-            window.location.href = "/length";
-        });
-
-        navTemperature.addEventListener("click", function() {
-            window.location.href = "/temperature";
-        });
-
-        // Convert and Reset buttons
-        convertButton.addEventListener("click", function() {
-            document.getElementById('converting-view').classList.add('hidden');
-            
-            document.getElementById('converted-view').classList.remove('hidden');
-        });
-
-        resetButton.addEventListener("click", function() {
-            document.getElementById('converting-view').classList.remove('hidden');
-            
-            document.getElementById('converted-view').classList.add('hidden');
-        });
-    </script>
+    <script src="static/weight.js"></script>
 </body>
 </html>
