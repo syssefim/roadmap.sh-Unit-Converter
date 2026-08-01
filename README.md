@@ -43,7 +43,7 @@ python3 app.py
   </p>
   <p>
     <a href="https://github.com/syssefim">GitHub</a> • 
-    <a href="https://linkedin.com/in/https://www.linkedin.com/in/serafim-sharkov/">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/serafim-sharkov/">LinkedIn</a>
   </p>
 </div>
 
