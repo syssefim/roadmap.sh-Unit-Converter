@@ -53,35 +53,35 @@ convertButton.addEventListener("click", function() {
     switch (convertFromUnit.value.toLowerCase() + '-' + convertToUnit.value.toLowerCase()) {
         // C
         case 'c-c':
-            result = 5;
+            result = 1;
             break;
         case 'c-f':
-            result = 5;
+            result = (Number(temperature.value) * 1.8) + 32;
             break;
         case 'c-k':
-            result = 5;
+            result = Number(temperature.value) + 273.15;
             break;
         
         // F
         case 'f-c':
-            result = 5;
+            result = (Number(temperature.value) - 32) * 0.55555;
             break;
         case 'f-f':
-            result = 5;
+            result = 1;
             break;
         case 'f-k':
-            result = 5;
+            result = ((Number(temperature.value) - 32) * 0.55555) + 273.15;
             break;
 
         // K
         case 'k-c':
-            result = 5;
+            result = Number(temperature.value) - 273.15;
             break;
         case 'k-f':
-            result = 5;
+            result = (Number(temperature.value) - 273.15) * 1.8 + 32;
             break;
         case 'k-k':
-            result = 5;
+            result = 1;
             break;
     }
 
