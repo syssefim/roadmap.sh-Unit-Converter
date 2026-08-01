@@ -2,9 +2,13 @@
 
 Unit Converter project from [roadmap.sh](https://roadmap.sh/projects/unit-converter) Backend Developer Roadmap. 
 
-## 🧐 About the Project
 
-You are required to build a simple web app that can convert between different units of measurement. It can convert units of length, weight, volume, area, temperature, and more. The user can input a value and select the units to convert from and to. The application will then display the converted value.
+## 📝 About the Project
+
+A simple web app that can convert between different units of measurement. It can convert units of length, weight, and temperature. The user can input a value and select the units to convert from and to. The application will then display the converted value.
+
+<img src="preview1.png" alt="App Screenshot1" width="48%" /> <img src="preview2.png" alt="App Screenshot2" width="48%" />
+
 
 ## 🛠️ Built With
 
@@ -20,15 +24,27 @@ You are required to build a simple web app that can convert between different un
 git clone https://github.com/syssefim/roadmap.sh-Unit-Converter.git
 cd roadmap.sh-Unit-Converter
 ```
-2. Then, start the app with this command:
+2. Next, install dependencies with this command:
+```
+pip install -r requirements.txt
+```
+3. Then, start the app with:
 ```
 python3 app.py
 ```
-3. Finally, open your browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+4. Finally, open your browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
+
+---
 
 <div align="center">
-  <sub>Made with ❤️ by <a href="https://github.com/syssefim">Serafim Sharkov</a></sub>
+  <p>
+    Serafim Sharkov • 2026
+  </p>
+  <p>
+    <a href="https://github.com/syssefim">GitHub</a> • 
+    <a href="https://linkedin.com/in/https://www.linkedin.com/in/serafim-sharkov/">LinkedIn</a>
+  </p>
 </div>
 
 <!-- MARKDOWN LINKS & IMAGES -->
