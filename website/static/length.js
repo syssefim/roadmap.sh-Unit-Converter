@@ -133,7 +133,7 @@ convertButton.addEventListener("click", function() {
 
     // Conversion calculation
     let result = Number(length.value) * conversion[convertFromUnit.value.toLowerCase() + '-' + convertToUnit.value.toLowerCase()];
-    resultContainer.innerHTML = length.value + ' ' + convertFromUnit.value + ' = ' + result + ' ' + convertToUnit.value;
+    resultContainer.innerHTML = '<strong>' + length.value + ' ' + convertFromUnit.value + ' = ' + result + ' ' + convertToUnit.value + '</strong>';
 
     history.pushState({ 
         view: 'converted', 
